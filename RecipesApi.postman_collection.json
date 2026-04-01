@@ -1,0 +1,147 @@
+{
+  "info": {
+    "_postman_id": "329d1e68-c966-486a-ae18-0d8478364410",
+    "name": "RecipesApi",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40788805"
+  },
+  "item": [
+    {
+      "name": "Get All Recipes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/api/v1/recipes?search=&order=",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "recipes"
+          ],
+          "query": [
+            {
+              "key": "search",
+              "value": "",
+              "type": "text",
+              "id": 0
+            },
+            {
+              "key": "order",
+              "value": "",
+              "type": "text",
+              "id": 1
+            },
+            {
+              "key": "",
+              "value": "",
+              "type": "text",
+              "id": 2,
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Recipes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"recipeName\": \"Tavuk Sote\",\r\n  \"category\": \"Ana Yemek\",\r\n  \"ingredients\": [\r\n    \"400 gram tavuk göğsü\",\r\n    \"1 adet soğan\",\r\n    \"2 adet yeşil biber\",\r\n    \"1 adet kırmızı biber\",\r\n    \"2 adet domates\",\r\n    \"3 yemek kaşığı sıvı yağ\",\r\n    \"1 çay kaşığı tuz\",\r\n    \"1 çay kaşığı karabiber\",\r\n    \"1 çay kaşığı pul biber\"\r\n  ],\r\n  \"instructions\": [\r\n    \"Tavuk göğsünü kuşbaşı doğrayın.\",\r\n    \"Soğanı ve biberleri ince ince doğrayın.\",\r\n    \"Tavaya sıvı yağı ekleyip tavukları yüksek ateşte kavurun.\",\r\n    \"Tavuklar suyunu salıp çekince soğan ve biberleri ekleyin.\",\r\n    \"Birkaç dakika kavurduktan sonra doğranmış domatesleri ekleyin.\",\r\n    \"Baharatları ilave edin ve karıştırın.\",\r\n    \"Orta ateşte 10-15 dakika pişirin.\",\r\n    \"Sıcak servis yapın.\"\r\n  ],\r\n  \"recipeTime\": \"25\",\r\n  \"servingSuggestion\": \"Yanında pilav veya makarna ile servis edilebilir.\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/api/v1/recipes",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "recipes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get A Racipe",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/api/v1/recipes/ID",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "recipes",
+            "ID"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Recipe",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"recipeTime\": \"10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/api/v1/recipes/ID",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "recipes",
+            "ID"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Recipe",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/api/v1/recipes/ID",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "recipes",
+            "ID"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
