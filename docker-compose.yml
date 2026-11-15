@@ -1,0 +1,20 @@
+services:
+  api:
+    build:
+      context: ./api
+    ports:
+      - "4004:4004"
+    volumes:
+      - ./api/data.json:/app/data.json
+    restart: unless-stopped
+
+  client:
+    build:
+      context: ./client
+      args:
+        VITE_API_URL: http://localhost:4004
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+    restart: unless-stopped
